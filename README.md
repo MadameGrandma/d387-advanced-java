@@ -6,7 +6,9 @@ Welcome to Advanced Java! This is an opportunity for students to write multithre
 
 FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
 ## BASIC INSTRUCTIONS
-For this assessment, you will modify a Spring application with a Java back end and an Angular front end to include multithreaded language translation, a message at different time zones, and currency exchange. Then, build a Docker image of the current multithreaded Spring application and containerize it using the supporting documents provided in this task.
+For this assessment, you will modify a Spring application with a Java back end and an Angular front end to include 
+multithreaded language translation, a message at different time zones, and currency exchange. Then, build a Docker image 
+of the current multithreaded Spring application and containerize it using the supporting documents provided in this task.
 
 
 ## SUPPLEMENTAL RESOURCES 
@@ -20,7 +22,8 @@ For this assessment, you will modify a Spring application with a Java back end a
 > Press the '+' button located near your branch name. In the dropdown list, press the 'New branch' button. This will allow you to create a name for your branch. Once the branch has been named, you can select 'Create Branch' to push the branch to your repository.
 
 - IntelliJ method
-> In IntelliJ, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
+> In IntelliJ, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. 
+> Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
 
 ## SUPPORT
 If you need additional support, please navigate to the course page and reach out to your course instructor.
