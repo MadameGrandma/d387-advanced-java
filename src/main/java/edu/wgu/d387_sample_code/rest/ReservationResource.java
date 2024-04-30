@@ -1,4 +1,5 @@
 package edu.wgu.d387_sample_code.rest;
+import edu.wgu.d387_sample_code.DisplayMessage;
 
 
 import edu.wgu.d387_sample_code.convertor.*;
@@ -152,5 +153,17 @@ public class ReservationResource {
 
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
+
+
+    /*
+    @RequestMapping(path="", method=RequestMethod.GET)
+    public ResponseEntity<String[]> getWelcomeMessage() {
+        String[] message;
+
+        message = DisplayMessage.getWelcomeMessage();
+        System.out.println(message[0]);
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }*/
 
 }
