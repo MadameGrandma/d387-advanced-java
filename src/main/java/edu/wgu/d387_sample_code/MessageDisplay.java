@@ -3,18 +3,24 @@ package edu.wgu.d387_sample_code;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.Executors.newFixedThreadPool;
 
 public class MessageDisplay implements Runnable {
 
-    static ExecutorService messageExecutor = newFixedThreadPool(5);
-    //public String[] messageArray = new String[5];
-    public String messageArray;
+    //public static ExecutorService messageExecutor = newFixedThreadPool(2);
+    //public String[] messageArray = new String[2];
+    public static List<String> messageList = new ArrayList<>();
+    //public String messageArray;
     private String locale;
 
+    //Unused default constructor
     public MessageDisplay() {
     }
 
@@ -22,32 +28,25 @@ public class MessageDisplay implements Runnable {
         this.locale = locale;
     }
 
-    public void run(){
-        getWelcomeMessage(locale);
-    }
-
-    public String getWelcomeMessage(String locale){
+    public void readWelcomeMessage(String locale){
         Properties properties = new Properties();
-
-        messageExecutor.execute(() -> {
-            try {
-                //Load english welcome message and add to array
-                //InputStream stream_en = new ClassPathResource("translation_en_US.properties").getInputStream();
-                InputStream stream = new ClassPathResource(locale).getInputStream();
-                properties.load(stream);
-                messageArray = properties.getProperty("welcome");
-                System.out.println(messageArray);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        messageExecutor.shutdown();
-        return messageArray;
+        try {
+            InputStream stream = new ClassPathResource(locale).getInputStream();
+            properties.load(stream);
+            messageList.add(properties.getProperty("welcome"));
+            System.out.println("In MessageDisplay.java: " + messageList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
+    public void run(){
+        readWelcomeMessage(locale);
+    }
 
+    public List<String> getWelcomeMessage(){
+        return messageList;
+    }
 
 }
 

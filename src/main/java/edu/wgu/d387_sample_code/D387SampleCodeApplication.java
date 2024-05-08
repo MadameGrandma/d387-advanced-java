@@ -11,7 +11,7 @@ public class D387SampleCodeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(D387SampleCodeApplication.class, args);
 
-
+/*
 		//English message thread
 		MessageDisplay threadOne = new MessageDisplay("welcome_en.properties");
 		Thread enThread = new Thread(threadOne);
@@ -20,7 +20,7 @@ public class D387SampleCodeApplication {
 		//French message thread
 		MessageDisplay threadTwo = new MessageDisplay("welcome_fr.properties");
 		Thread frThread = new Thread(threadTwo);
-		frThread.start();
+		frThread.start();*/
 	}
 
 }
