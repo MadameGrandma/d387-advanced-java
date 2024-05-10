@@ -10,6 +10,7 @@ import java.util.Properties;
 public class MessageDisplay implements Runnable {
 
     public static List<String> messageList = new ArrayList<>();
+    public static List<String> messageListShort = new ArrayList<>();
     //public String messageArray;
     private String locale;
 
@@ -39,7 +40,9 @@ public class MessageDisplay implements Runnable {
     }
 
     public List<String> getWelcomeMessage(){
-        return messageList;
+
+        messageListShort = messageList.subList(0,2);
+        return messageListShort;
     }
 
 }
