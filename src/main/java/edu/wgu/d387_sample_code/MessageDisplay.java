@@ -4,18 +4,11 @@ import org.springframework.core.io.ClassPathResource;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
-
-import static java.util.concurrent.Executors.newFixedThreadPool;
 
 public class MessageDisplay implements Runnable {
 
-    //public static ExecutorService messageExecutor = newFixedThreadPool(2);
-    //public String[] messageArray = new String[2];
     public static List<String> messageList = new ArrayList<>();
     //public String messageArray;
     private String locale;
