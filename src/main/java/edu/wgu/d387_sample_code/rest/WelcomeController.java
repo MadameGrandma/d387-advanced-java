@@ -41,6 +41,7 @@ public class WelcomeController {
         // This prevents serving list to front end incomplete
         messageList = threadOne.getWelcomeMessage();
         System.out.println("In WelcomeController.java: " + messageList);
+        
 
         //Convert to array for better serialization
         messageArray = messageList.toArray(messageArray);

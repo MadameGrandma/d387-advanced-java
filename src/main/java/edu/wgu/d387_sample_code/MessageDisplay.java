@@ -31,6 +31,7 @@ public class MessageDisplay implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public void run(){
