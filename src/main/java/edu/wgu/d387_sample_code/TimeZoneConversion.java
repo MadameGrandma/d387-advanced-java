@@ -16,7 +16,7 @@ public class TimeZoneConversion {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     //Define desired format
     private static final SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm");
-    public static void convertTimeZones() throws ParseException {
+    public void convertTimeZones() throws ParseException {
 
         ZoneId zUTC = ZoneId.of("UTC");
         ZoneId zEastern = ZoneId.of("America/New_York");
@@ -29,16 +29,6 @@ public class TimeZoneConversion {
         System.out.println("local time "+ localDateTime.toString());
         ZonedDateTime zonedDateTime = localDateTime.atZone(zoneId);
 
-        // UTC
-        // Define time data
-        ZonedDateTime zonedDateTimeUTC = zonedDateTime.withZoneSameInstant(zUTC);
-        LocalDateTime localDateTimeUTC = zonedDateTimeUTC.toLocalDateTime();
-        // Parse and format time
-        String stringUTC = localDateTimeUTC.toString();
-        Date parseDate = sdf.parse(stringUTC);
-        String output = sdf1.format(parseDate);
-        zoneArray[0] = "UTC time - " + output;
-        System.out.println(zoneArray[0]);
 
         // Eastern Time
         // Define time data
@@ -46,10 +36,10 @@ public class TimeZoneConversion {
         LocalDateTime localDateTimeEastern = zonedDateTimeEastern.toLocalDateTime();
         // Parse and format time
         String stringEastern = localDateTimeEastern.toString();
-        parseDate = sdf.parse(stringEastern);
-        output = sdf1.format(parseDate);
-        zoneArray[1] = "Eastern time - " + output;
-        System.out.println(zoneArray[1]);
+        Date parseDate = sdf.parse(stringEastern);
+        String output = sdf1.format(parseDate);
+        zoneArray[0] = "Eastern time - " + output;
+        System.out.println(zoneArray[0]);
 
 
         // Mountain Time
@@ -60,7 +50,18 @@ public class TimeZoneConversion {
         String stringMountain = localDateTimeMountain.toString();
         parseDate = sdf.parse(stringMountain);
         output = sdf1.format(parseDate);
-        zoneArray[2] = "Mountain time - " + output;
+        zoneArray[1] = "Mountain time - " + output;
+        System.out.println(zoneArray[1]);
+
+        // UTC
+        // Define time data
+        ZonedDateTime zonedDateTimeUTC = zonedDateTime.withZoneSameInstant(zUTC);
+        LocalDateTime localDateTimeUTC = zonedDateTimeUTC.toLocalDateTime();
+        // Parse and format time
+        String stringUTC = localDateTimeUTC.toString();
+        parseDate = sdf.parse(stringUTC);
+        output = sdf1.format(parseDate);
+        zoneArray[2] = "UTC time - " + output;
         System.out.println(zoneArray[2]);
 
 		/* Not needed for project scope, but including for troubleshooting
@@ -77,5 +78,10 @@ public class TimeZoneConversion {
 		zoneArray[2] = output;
 		System.out.println("Pacific Time - " + output);
 		*/
+    }
+
+    public String[] getTimezones() throws ParseException {
+        convertTimeZones();
+        return zoneArray;
     }
 }

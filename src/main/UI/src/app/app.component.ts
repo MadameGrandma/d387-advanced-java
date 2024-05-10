@@ -28,6 +28,7 @@ export class AppComponent implements OnInit{
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
   welcome!:Observable<any>
+  presentationTimes!:String[];
 
     ngOnInit(){
       this.roomsearch= new FormGroup({
@@ -40,6 +41,13 @@ export class AppComponent implements OnInit{
         welcome=> {
           console.log(Object.values(welcome));
           this.welcome = <any>Object.values(welcome);
+        }
+      )
+
+      this.getPresentationTimes().subscribe(
+        presentationTimes=> {
+          console.log(Object.values(presentationTimes));
+          this.presentationTimes = <any>Object.values(presentationTimes);
         }
       )
 
@@ -95,6 +103,10 @@ export class AppComponent implements OnInit{
 
     getWelcomeMessage(): Observable<any> {
       return this.httpClient.get(this.baseURL + '/api/welcome',{responseType: 'json'});
+    }
+
+    getPresentationTimes(): Observable<any> {
+      return this.httpClient.get(this.baseURL + '/api/timezones',{responseType: 'json'});
     }
 
 

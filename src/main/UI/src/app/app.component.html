@@ -6,9 +6,9 @@
       <h1>Landon Hotel</h1>
       <h2>London, Ontario</h2>
 
-      <div class="scene" id="presentation">
+      <!--<div class="scene" id="presentation">-->
         <h2>{{welcome}}</h2>
-      </div>
+      <!--</div>-->
 
       <p><a href="/#welcome"><img src="assets/images/arrow.png" alt="down arrow"></a></p>
     </div>
@@ -27,9 +27,6 @@
 <main id="wrapper">
   <div class="scene" id="welcome">
     <article class="content">
-
-
-
       <div class="row">
         <div class=""col-12>
           <div class="gallery">
@@ -39,6 +36,9 @@
             <img src="assets/images/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures">
             <img class="hidesm" src="assets/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures">
           </div>
+          <!-- Step B3b -->
+          <h2>Please join us for an online, live presentation at Landon Hotel!<br />
+            {{presentationTimes}}</h2>
           <h1>Book a Room</h1>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">
