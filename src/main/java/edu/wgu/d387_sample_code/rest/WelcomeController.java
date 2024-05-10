@@ -2,9 +2,6 @@ package edu.wgu.d387_sample_code.rest;
 
 
 import edu.wgu.d387_sample_code.MessageDisplay;
-import edu.wgu.d387_sample_code.model.request.ReservationRequest;
-import edu.wgu.d387_sample_code.model.response.ReservableRoomResponse;
-import org.aspectj.bridge.Message;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
