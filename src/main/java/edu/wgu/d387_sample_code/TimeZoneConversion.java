@@ -38,7 +38,7 @@ public class TimeZoneConversion {
         String stringEastern = localDateTimeEastern.toString();
         Date parseDate = sdf.parse(stringEastern);
         String output = sdf1.format(parseDate);
-        zoneArray[0] = "Eastern time - " + output;
+        zoneArray[0] = output + " EST";
         System.out.println(zoneArray[0]);
 
 
@@ -50,7 +50,7 @@ public class TimeZoneConversion {
         String stringMountain = localDateTimeMountain.toString();
         parseDate = sdf.parse(stringMountain);
         output = sdf1.format(parseDate);
-        zoneArray[1] = "Mountain time - " + output;
+        zoneArray[1] = " " + output + " MST";
         System.out.println(zoneArray[1]);
 
         // UTC
@@ -61,7 +61,7 @@ public class TimeZoneConversion {
         String stringUTC = localDateTimeUTC.toString();
         parseDate = sdf.parse(stringUTC);
         output = sdf1.format(parseDate);
-        zoneArray[2] = "UTC time - " + output;
+        zoneArray[2] = " " + output + " UTC";
         System.out.println(zoneArray[2]);
 
 		/* Not needed for project scope, but including for troubleshooting
